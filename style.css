@@ -499,7 +499,7 @@ footer p {
    ========================================= */
 
 /* Target device orientation and ensure screen is wider than it is tall */
-@media (orientation: landscape), (max-aspect-ratio: 1/1) {
+/*@media (orientation: landscape), (min-aspect-ratio: 1/1) {
 
   .dropdown-content {
   background-color: rgba(5,5,5,0.8); 
@@ -519,92 +519,84 @@ footer p {
   justify-content: space-between;
   
 }
-  /* 1. Adjust Global Container / Hero Section */
+  
   .card1 {
-    height: 100vh;       /* Full screen height for hero */
+    height: 100vh;       
     margin-top: 0;
     justify-content: center;
-    position: relative;  /* Prepare for flow layout */
+    position: relative;  
   }
   
   .header-txt-loop {
-    top: 80pt;           /* Push scrolling text down slightly */
+    top: 80pt;           
   }
 
-  /*#flexCont {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100vw;
-  }*/
-
   
-  /* 2. Side-by-Side Layout Logic for Card 2 & Card 3 */
+  
   .card2, .card3 {
-    top: 110vh;          /* Position both cards below the hero section */
-    height: 80vh;        /* Taller cards for desktop to fit content */
-    width: 65vh;         /* Just under 50% to fit side-by-side */
+    top: 110vh;           
+    height: 80vh;        
+    width: 65vh;         
     border-radius: 20pt;
     
   }
   #ugoSec {
     margin-top: -50pt;
   }
-  /* Position Card 2 on the Left */
+  
   .card2 {
     left: calc(49vw - 65vh);
     top: 110vh;
   }
 
-  /* Position Card 3 on the Right */
+  
   .card3 {
     left: 51vw;
     top: 110vh;
   }
 
-  /* 3. Adjust Internal Elements of Card 2 (Image + Text) */
+  
   .card2 img {
     width: 100%;
-    height: 100%;         /* Image takes top 45% of card */
-    object-fit: cover;   /* Crop image nicely */
+    height: 100%;         
+    object-fit: cover;   
     object-position: 0% 80%;
     border-radius: 20pt 20pt 20pt 20pt;
   }
 
   .card2 h1 {
-    top: 10pt;            /* Move title below image */
+    top: 10pt;            
     width: 100%;
-    font-size: clamp(26px, 2.5vw, 28px);    /* Responsive font size */
+    font-size: clamp(26px, 2.5vw, 28px);    
     line-height: 1.2;
   }
 
   .card2 p {
-    top: 60pt;            /* Move text below title */
+    top: 60pt;            
     width: 90%;
-    font-size: clamp(14px, 1.1vw, 17px);    /* Responsive font size */
+    font-size: clamp(14px, 1.1vw, 17px); 
     line-height: 1.4;
   }
 
   .card2 button {
     bottom: 30pt;
     left: 50%;
-    transform: translateX(-50%); /* Center button horizontally */
+    transform: translateX(-50%); 
   }
 
-  /* 4. Adjust Internal Elements of Card 3 (Image + Text) */
   .card3 img {
     width: 100%;
     object-fit: cover;
-    margin-top: 0pt;       /* Remove mobile margin */
+    margin-top: 0pt;       
   }
 
   .card3 p {
     position: absolute;
-    bottom: 70pt;            /* Start text below image */
+    bottom: 70pt;            
     width: 85%;
-    font-size: clamp(14px, 1.1vw, 17px);    /* Responsive font size for readability */
+    font-size: clamp(14px, 1.1vw, 17px); 
     line-height: 1.5;
-    text-align: left;    /* Better readability on desktop */
+    text-align: left; 
   }
 
   .card3 button {
@@ -613,10 +605,9 @@ footer p {
     transform: translateX(-50%);
   }
 
-  /* 5. Adjust Footer Position */
+  
   footer {
-    /* Push footer below the side-by-side cards 
-       (110vh start + 80vh height + 10vh gap) */
+    
     top: 200vh; 
     height: 100pt;
     display: flex;
@@ -628,7 +619,7 @@ footer p {
   }
 
 }
-/* Optional: Prevent layout break on extremely wide/short screens */
+ */
 @media (min-aspect-ratio: 16/5) {
   /* Keeps the variable title from getting too large on ultra-wide monitors */
   .variable-title {
