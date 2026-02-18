@@ -481,12 +481,12 @@ footer p {
   user-select: none;
   -webkit-user-select: none;
   bottom: 27pt;
-  border: none;
-  width: 110pt;
+  border: solid 2pt black;
+  width: 115pt;
   height: 33pt;
   border-radius: 50pt;
-  color: #FFB200;
-  background-color: black;
+  color: black;
+  background-color: #FFB200;
   font-family: Syne;
   font-size: 12.5pt;
   font-weight: 700;
