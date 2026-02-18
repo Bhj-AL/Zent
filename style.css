@@ -1,0 +1,637 @@
+body {
+  padding: -15px;
+  margin: 0;
+  width: 100vw;
+  background-color: black;
+}
+button {
+  transition: scale 0.5s cubic-bezier(.27,.32,.06,1.26), filter 0.5s;
+}
+button:hover {
+  scale: 1.1;
+  filter: brightness(115%);
+}
+
+.blrhedr {
+  content: '';
+  position: fixed;
+  top: 2vw;
+  left: 2%;
+  width: calc(96.3% - 20pt);
+  height: 27pt;
+  padding: 10pt;
+  background-color: transparent;
+  border-radius: 10pt;
+  backdrop-filter: blur(15px);
+  z-index: 999;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  position: fixed;
+  top: 2vw;
+  left: 2%;
+  width: calc(96% - 20pt);
+  padding: 10pt;
+  background-color: rgba(5,5,5,0.8); 
+  /* backdrop-filter: blur(15px); */
+  border-radius: 5pt;
+  border: solid 1pt rgba(100,100,100,0.2);
+  z-index: 1000;
+}
+.HLogo {
+  width: 70pt;
+  padding: 0;
+     -webkit-tap-highlight-color: transparent !Important;
+  tap-highlight-color: transparent !Important;
+  user-select: none;
+  -webkit-user-select: none;
+  border: none;
+  background-color: transparent;
+}
+.HLogo img{
+  height: 20pt;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  filter: invert(100%);
+}
+header section {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 60pt;
+}
+.headerBtn {
+   -webkit-tap-highlight-color: transparent !Important;
+  tap-highlight-color: transparent !Important;
+  user-select: none;
+  -webkit-user-select: none;
+  border: none;
+  height: 25pt;
+  width: 25pt;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.headerBtn span {
+  font-size: 20pt;
+  text-align: center;
+  color: rgb(250,250,250);  
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  background-color: rgba(5,5,5,0.8); 
+  border-radius: 5pt;
+  border: solid 1pt rgba(100,100,100,0.3);
+  position: fixed;
+  right: 1.5%;
+  top: 87pt;
+  width: calc(96% - 20pt);
+  height: 90pt;
+  padding: 10pt;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1001;
+  backdrop-filter: blur(15px) ;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.dropdown:focus-within .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: blur 0.5s;
+
+  a {
+    animation: txtblur 0.3s cubic-bezier(.05,.01,.49,1.23) 0s;
+  }
+}
+
+.dropdown-content a {
+  color: white;
+  text-align: left;
+  text-decoration: none;
+  font-family: Syne;
+  font-size: 17pt;
+  font-weight: 700;
+  letter-spacing: -0.9px;
+}
+
+.dropdown-content a:hover {
+  color: #FFB200;
+  text-align: left;
+  text-decoration: none;
+  font-family: Syne;
+  font-size: 17pt;
+  font-weight: 700;
+  letter-spacing: -0.9px;
+  border: none;
+  outline: none;
+}
+.dropdown-content a:visited {
+  color: white;
+  text-align: left;
+  text-decoration: none;
+  font-family: Syne;
+  font-size: 17pt;
+  font-weight: 700;
+  letter-spacing: -0.9px;
+}
+
+@keyframes txtblur {
+  0% {
+    transform: translateY(20pt);
+    filter: blur(4px);
+  }
+  100% {
+    transform: translateY(0pt);
+    filter: blur(0px);
+  }
+}
+@keyframes blur {
+  0% { 
+    transform: scale(1, 1);
+    filter: blur(3px) opacity(10%);
+     }
+  25% { 
+    transform: scale(0.98, 1.02);
+    filter: blur(3.6px) opacity(100%);
+  }
+  50% { transform: scale(1.02, 0.98); }
+  75% { transform: scale(1.01, 0.99); 
+}
+  100% { 
+    transform: scale(1, 1);
+    filter: blur(0px) opacity(100%);
+     }
+}
+
+.header-txt-loop {
+  width: 96%;
+  background-color: #FFB200;
+  height: 20pt;
+  position: fixed;
+  top: 60pt;
+  left: 2%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 5pt;
+  z-index: 999;
+}
+.loop {
+  white-space: nowrap;
+  animation: infScrl 370s infinite linear;
+}
+.loop p {
+  font-family: Syne;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.7px;
+  margin-left: 5pt;
+  margin-right: 5pt;
+  
+}
+@keyframes infScrl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+.card1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  background: black;
+  height: 500pt;
+  margin-top: 60pt;
+  margin-right: -15px !important;
+}
+.tagger {
+  outline: solid rgb(50,50,50) 1pt;
+  width: 120pt;
+  height: 18pt;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border-radius: 20pt;
+  background-color: rgb(13,13,13);      letter-spacing: 0.2pt;
+  margin-top: 55pt;
+  }
+.tagger p {
+  font-size: 9pt;
+  font-family: Syne;
+  font-weight: 600;
+  letter-spacing: -0.2pt;
+  text-align: center;
+  color: rgb(200,200,200);
+  }
+.wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -15pt;
+  scale: 1.1;
+}
+.variable-title {
+  font-size: 50pt;
+  letter-spacing: -3pt;
+  background: linear-gradient(white,rgb(230,230,230), rgb(100,100,100));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-top: 15pt;
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+}
+.variable-title span {
+  display: inline-block;
+
+  font-variation-settings: "wght" 400;
+
+  animation: variableWeight 1.8s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * 0.25s);
+  
+}
+@keyframes variableWeight {
+  0% {
+    font-variation-settings: "wght" 400;
+  }
+  100% {
+    font-variation-settings: "wght" 800;
+  }
+}
+
+
+
+.subHeading {
+  font-family: Syne;
+  font-weight: 400;
+  color: gray;
+  font-size: 12pt;
+  width: 90vw;
+  text-align: center;
+  margin-top: -15pt;
+}
+.btn1 {
+   -webkit-tap-highlight-color: transparent !Important;
+  tap-highlight-color: transparent !Important;
+  user-select: none;
+  -webkit-user-select: none;
+  margin-top: 25pt;
+  border: none;
+  width: 140pt;
+  height: 33pt;
+  border-radius: 50pt;
+  color: black;
+  background-color: #FFB200;
+  font-family: Syne;
+  font-size: 12.5pt;
+  font-weight: 700;
+  letter-spacing: -0.5pt;
+}
+.btn1 a {
+  text-decoration: none;
+  color: #000;
+}
+.btn1 a:hover {
+  text-decoration: none;
+  color: #000;
+}
+.btn1 a:visited {
+  text-decoration: none;
+  color: #000;
+}
+.btn2 {
+   -webkit-tap-highlight-color: transparent !Important;
+  tap-highlight-color: transparent !Important;
+  user-select: none;
+  -webkit-user-select: none;
+  margin-top: 12pt;
+  border: solid rgb(50,50,50) 1pt;
+  width: 140pt;
+  height: 33pt;
+  border-radius: 50pt;
+  color: rgb(200,200,200);
+  background-color: rgb(13,13,13);
+  font-family: Syne;
+  font-size: 12.5pt;
+  font-weight: 700;
+  letter-spacing: -0.6pt;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.watchIcon {
+  scale: 1.2;
+}
+
+.card2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 97vw;
+  background: white;
+  height: 440pt;
+  margin-top: -50pt;
+  
+  border-radius: 20pt;
+  top: 480pt;
+  left: 1.5vw;
+}
+.card2 img {
+  width: 97vw;
+  margin-top: 0;
+  border-radius: 20pt 20pt 0 0;
+  z-index: 10;
+}
+.card2 h1 {
+  position: absolute;
+  font-family: Syne;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 30pt;
+  font-size: 30pt;
+  top: 17pt;
+  color: black;
+  text-align: center;
+  z-index: 11;
+}
+.card2 p {
+  position: absolute;
+  font-size: 10pt;
+  text-align: center;
+  font-family: Syne;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  line-height: 14pt;
+  width: 87%;
+  color: gray;
+  top: 112pt;
+  z-index: 12;
+}
+.card2 button {
+  position: absolute;
+    -webkit-tap-highlight-color: transparent !Important;
+  tap-highlight-color: transparent !Important;
+  user-select: none;
+  -webkit-user-select: none;
+  bottom: 27pt;
+  border: none;
+  width: 110pt;
+  height: 33pt;
+  border-radius: 50pt;
+  color: white;
+  background-color: black;
+  font-family: Syne;
+  font-size: 12.5pt;
+  font-weight: 700;
+  letter-spacing: -0.5pt;
+  z-index: 13;
+}
+
+footer {
+  position: absolute;
+  width: 100vw;
+  background: rgb(50,50,50);
+  height: 80pt;
+  margin-top: -50pt;
+  top: 1400pt;
+  left: 0vw;
+}
+footer img {
+  width: 40pt;
+  filter: invert(1);
+  margin-top: 15pt;
+  margin-left: 15pt;
+}
+footer p {
+  margin-left: 15pt;
+  font-family: Syne;
+  font-size: 12pt;
+  font-weight: 600;
+  color: white;
+}
+
+.card3 {
+  position: absolute; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 97vw;
+  background: #FFB200;
+  height: 440pt;
+  margin-top: 0;
+  
+  border-radius: 20pt;
+  top: 885pt;
+  left: 1.5vw;
+}
+.card3 img {
+  width: 95vw;
+  margin-top: 15pt;
+  border-radius : 20pt 20pt 0 0;
+  z-index: 10;
+}
+
+.card3 p {
+  position: absolute;
+  font-size: 10pt;
+  text-align: justify;
+  font-family: Syne;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  line-height: 14pt;
+  width: 87%;
+  color: black;
+  bottom: 80pt;
+  z-index: 12;
+}
+
+.card3 button {
+  position: absolute;
+    -webkit-tap-highlight-color: transparent !Important;
+  tap-highlight-color: transparent !Important;
+  user-select: none;
+  -webkit-user-select: none;
+  bottom: 27pt;
+  border: none;
+  width: 110pt;
+  height: 33pt;
+  border-radius: 50pt;
+  color: #FFB200;
+  background-color: black;
+  font-family: Syne;
+  font-size: 12.5pt;
+  font-weight: 700;
+  letter-spacing: -0.5pt;
+  z-index: 13;
+}
+
+/* =========================================
+   DESKTOP & LANDSCAPE OPTIMIZATION
+   ========================================= */
+
+/* Target device orientation and ensure screen is wider than it is tall */
+@media (orientation: landscape), (min-aspect-ratio: 1/1) {
+
+  .dropdown-content {
+  background-color: rgba(5,5,5,0.8); 
+  border-radius: 5pt;
+  border: solid 1pt rgba(100,100,100,0.3);
+  position: fixed;
+  right: 2%;
+  top: 80pt;
+  width: 200pt;
+  height: 90pt;
+  padding: 10pt;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1001;
+  backdrop-filter: blur(15px) ;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+  /* 1. Adjust Global Container / Hero Section */
+  .card1 {
+    height: 100vh;       /* Full screen height for hero */
+    margin-top: 0;
+    justify-content: center;
+    position: relative;  /* Prepare for flow layout */
+  }
+  
+  .header-txt-loop {
+    top: 80pt;           /* Push scrolling text down slightly */
+  }
+
+  /*#flexCont {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+  }*/
+
+  
+  /* 2. Side-by-Side Layout Logic for Card 2 & Card 3 */
+  .card2, .card3 {
+    top: 110vh;          /* Position both cards below the hero section */
+    height: 80vh;        /* Taller cards for desktop to fit content */
+    width: 65vh;         /* Just under 50% to fit side-by-side */
+    border-radius: 20pt;
+    
+  }
+  #ugoSec {
+    margin-top: -50pt;
+  }
+  /* Position Card 2 on the Left */
+  .card2 {
+    left: calc(49vw - 65vh);
+    top: 110vh;
+  }
+
+  /* Position Card 3 on the Right */
+  .card3 {
+    left: 51vw;
+    top: 110vh;
+  }
+
+  /* 3. Adjust Internal Elements of Card 2 (Image + Text) */
+  .card2 img {
+    width: 100%;
+    height: 100%;         /* Image takes top 45% of card */
+    object-fit: cover;   /* Crop image nicely */
+    object-position: 0% 80%;
+    border-radius: 20pt 20pt 20pt 20pt;
+  }
+
+  .card2 h1 {
+    top: 10pt;            /* Move title below image */
+    width: 100%;
+    font-size: clamp(26px, 2.5vw, 28px);    /* Responsive font size */
+    line-height: 1.2;
+  }
+
+  .card2 p {
+    top: 60pt;            /* Move text below title */
+    width: 90%;
+    font-size: clamp(14px, 1.1vw, 17px);    /* Responsive font size */
+    line-height: 1.4;
+  }
+
+  .card2 button {
+    bottom: 30pt;
+    left: 50%;
+    transform: translateX(-50%); /* Center button horizontally */
+  }
+
+  /* 4. Adjust Internal Elements of Card 3 (Image + Text) */
+  .card3 img {
+    width: 100%;
+    object-fit: cover;
+    margin-top: 0pt;       /* Remove mobile margin */
+  }
+
+  .card3 p {
+    position: absolute;
+    bottom: 70pt;            /* Start text below image */
+    width: 85%;
+    font-size: clamp(14px, 1.1vw, 17px);    /* Responsive font size for readability */
+    line-height: 1.5;
+    text-align: left;    /* Better readability on desktop */
+  }
+
+  .card3 button {
+    bottom: 30pt;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* 5. Adjust Footer Position */
+  footer {
+    /* Push footer below the side-by-side cards 
+       (110vh start + 80vh height + 10vh gap) */
+    top: 200vh; 
+    height: 100pt;
+    display: flex;
+    align-items: center;
+  }
+  
+  footer img {
+    margin-top: 0;
+  }
+
+}
+/* Optional: Prevent layout break on extremely wide/short screens */
+@media (min-aspect-ratio: 16/5) {
+  /* Keeps the variable title from getting too large on ultra-wide monitors */
+  .variable-title {
+    font-size: 4vw; 
+  }
+}
