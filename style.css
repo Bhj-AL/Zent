@@ -499,7 +499,7 @@ footer p {
    ========================================= */
 
 /* Target device orientation and ensure screen is wider than it is tall */
-@media (orientation: landscape), (min-aspect-ratio: 1/1) {
+@media (orientation: landscape), (max-aspect-ratio: 1/1) {
 
   .dropdown-content {
   background-color: rgba(5,5,5,0.8); 
